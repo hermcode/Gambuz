@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Quantico:wght@400;700&display=swap');
+
+:root {
+    --strong-blue: #0E121A;
+    --blue: #080629;
+    --yellow: #FEC83C;
+    --yellow-hover: #a07d1e;
+    --white: #fff;
+    --red: #F73B3B;
+    --gray: #E5E5E5;
+    --quantico-font: 'Quantico';
+    --poppins-font: 'Poppins'
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Primary button */
+.primary-btn {
+    background: var(--yellow);
+    border: 1px solid var(--yellow);
+    color: var(--blue);
+    font-family: var(--quantico-font);
+    text-transform: uppercase;
+    padding: 1rem 5rem;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 700;
+    transition: 0.3s;
+    display: block;
+    width: 100%;
+
+}
+
+.primary-btn:hover {
+    border-color: var(--strong-blue);
+    background: var(--yellow-hover);
+    color: var(--white);
+}
+
+/* Secondary Buttons */
+.secondary-btn {
+    background: var(--strong-blue);
+    border: 1px solid var(--white);
+    color: var(--white);
+    font-family: var(--quantico-font);
+    text-transform: uppercase;
+    padding: 1rem 5rem;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 700;
+    transition: 0.3s;
+    display: block;
+}
+
+.secondary-btn:hover {
+    border-color: var(--strong-blue);
+    background: var(--white);
+    color: var(--strong-blue);
+}
+
+.inactive {
+    display: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: var(--strong-blue);
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    color: var(--white);
+}
+
+h1, h2, h3 {
+    font-family: 'Quantico', sans-serif;
+    text-transform: uppercase;
+
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+@media (min-width: 1025px) {
+    h2 {
+        font-size: 3rem;
+    }
+}
+img {
+    width: 100%;
+}
+a {
+    text-decoration: none;
+}
+p {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+}
+li {
+    list-style: none;
+}
+
+
+/* Mobile header*/
+#mobileHeader{
+    display: flex;
+    height: 6rem;
+    padding: 1.5rem;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+    transition: 0.3s;
+    top: 0;
+}
+
+#desktopHeader {
+    display: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    height: 4rem;
+}
+
+.logo p {
+    color: var(--white);
+    font-family: var(--quantico-font);
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-left: 1rem;
+}
+
+#menuBtn {
+    color: var(--yellow);
+    font-size: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+#menuBtn i:hover {
+    cursor: pointer;
+}
+
+#mobileAsideMenu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    z-index: 5;
+    padding: 9rem 3rem 0;
+    transition: 0.3s;
+    background: var(--strong-blue);
+}
+
+#mobileAsideMenu .ul-links {
+    padding: 0;
+}
+
+.aside-bar-hidden {
+    transform: translateX(100%);
+}
+
+#mobileAsideMenu .ul-links a {
+    color: var(--yellow);
+    font-family: var(--quantico-font);
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    display: block;
+    font-weight: 700;
+    margin-bottom: 3.8rem;
+}
+
+#mobileAsideMenu .ul-links a:last-of-type {
+    margin-bottom: 0;
+}
+
+.nav-aside-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 70rem;
+    min-height: calc(100vh - 9rem);
+}
+
+.nav-aside-menu .secondary-btn {
+    margin: 3rem 0;
+}
+
+@media (min-width: 1025px) {
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    
+    #mobileHeader {
+        display: none;
+    }
+
+    #desktopHeader {
+        display: flex;
+        height: 8rem;
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+        transition: 0.3s;
+        align-items: center;
+        top: 0;
+    }
+
+    #desktopHeader .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #desktopHeader nav ul{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+    #desktopHeader nav ul li a{
+        color: var(--yellow);
+        margin-right: 2rem;
+        text-transform: uppercase;
+        font-family: var(--quantico-font);
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+
+    #desktopHeader nav ul a {
+        font-size: 1.4rem;
+    }
+
+}
+
+
+/* Head */
+.main-head {
+    height: 100vh;
+    min-height: 800px;
+    width: 100%;
+    padding-top: 9rem;
+    background: var(--blue);
+    background-image: url("../assets/mobile-head-bg.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.head-content-2 {
+    max-width: 90%;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+    height: calc(100vh - 8rem);
+}
+
+.head-content-2 span {
+    color: var(--yellow);
+    font-family: var(--quantico-font);
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.head-content-2 h1 {
+    font-size: 3rem;
+    margin: 2rem 0;
+    line-height: 4.2rem;
+}
+
+.head-content-2 p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 2.5rem;
+}
+
+.head-content-2 .primary-btn {
+    margin-top: 3rem;
+    
+}
+.head-content-2 .secondary-btn {
+    margin-top: 2rem;
+    
+}
+
+.head-content-2 img {
+    position: absolute;
+    max-width: 40rem;
+    right: -20px;
+    bottom: 0px;
+    z-index: 1;
+}
+
+.head-info {
+    margin-top: 2rem;
+    z-index: 90;
+}
+
+.head-info h1 {
+    font-size: 3rem;
+}
+@media (min-width: 1025px) {
+
+    .main-head {
+        background-image: url("../assets/head-bg.jpg");
+    }
+
+    .head-content-2 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;  
+        margin: 0; 
+    }
+    
+    .head-content-2 img {
+        /* align-items: baseline; */
+        max-width: 70rem;
+        right: -200px;
+        bottom: 0;
+        z-index: 1;
+    }
+    .head-content-2 span {
+        color: var(--yellow);
+        font-family: var(--quantico-font);
+        text-transform: uppercase;
+        font-size: 2rem;
+    }
+
+    .head-info {
+        margin-top: 5rem;
+        grid-column: 1/3;
+    }
+    
+    .head-info h1 {
+        font-size: 5rem;
+        margin: 2rem 0;
+        line-height: 5rem;
+        font-weight: 700;
+    }
+    
+    .head-content-2 p {
+        font-size: 1.4rem;
+        font-weight: 300;
+        line-height: 2.5rem;
+    }
+    
+    .head-content-2 .primary-btn {
+        margin-top: 3rem;
+        max-width: 60%;
+    }
+    .head-content-2 .secondary-btn {
+        margin-top: 2rem;
+        max-width: 60%;
+    }
+}
+
+/* Main Section */
+
+.main-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.game-card {
+    background-color: var(--blue);
+    margin-bottom: 3rem;
+}
+
+.card-img-bg {
+    height: 30rem;
+    background-image: url('../assets/cyberpunk.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-info {
+    padding: 2rem;
+}
+
+.game-info p {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.likes {
+    height: 0.2rem;
+    background-color: var(--yellow);
+    width: 70%;
+}
+.dislikes {
+    height: 0.2rem;
+    background-color: var(--red);
+    width: 30%;
+}
+
+.game-buttons {
+    margin-top: 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-buttons a:first-child {
+    border: 1px dotted var(--white);
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-size: 2rem;
+    transition: 0.3s;
+}
+.game-buttons a:first-child:hover {
+    background-color: var(--white);
+    color: var(--blue);
+}
+
+.price {
+    align-items: center;
+}
+
+.price span {
+    font-family: var(--quantico-font);
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: -0.15rem;
+    margin-right: 2rem;
+    opacity: 0.5;
+    color: var(--yellow);
+    text-decoration: line-through;
+}
+.price a {
+    display: flex;
+    background-color: var(--yellow);
+    height: 4rem;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--quantico-font);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: -0.15rem;
+    width: 10rem;
+    transition: 0.3s;
+}
+.price a:hover {
+    color: var(--white);
+    background-color: var(--yellow-hover);
+}
+
+@media (min-width: 1025px) {
+    .grid-top-games {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .card-img-bg {
+        height: 25rem;
+    }
+}
+
+/* Black Ops Section*/
+#black-ops {
+    margin-top: 8rem;
+}
+
+.black-ops-img-bg {
+    height: 30rem;
+    background-image: url('../assets/black-ops.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+#black-ops h2{
+    font-size: 2.5rem;
+    margin-top: 2rem;
+}
+#black-ops h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+#black-ops h1 span {
+    color: var(--red);
+}
+#black-ops p {
+    font-size: 1.4rem;
+}
+
+@media (min-width: 1025px) {
+    .black-ops-img-bg {
+        height: 56rem;
+        background-size: auto;
+    }
+
+    #black-ops p, #black-ops h2, #black-ops h1{
+        margin: 0 auto;
+        max-width: 80rem;
+    }
+
+    #black-ops p:first-of-type, #black-ops h2{
+        margin-top: 4rem;
+        max-width: 80rem;
+    }
+}
+
+/* Consoles Section*/
+.consoles-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.consoles-grid {
+    display: none;
+}
+
+@media (min-width: 1025px) {
+    .carousel {
+        display: none;
+    }
+
+    .consoles-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .consoles-grid a {
+        overflow: hidden;
+    }
+}
+
+/* Warzone section */
+.warzone-section span{
+    color: var(--yellow);
+    font-family: var(--quantico-font);
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.warzone-section p {
+    margin-top: 2rem;
+}
+.warzone-section img {
+    margin-top: 4rem;
+}
+
+@media (min-width: 1025px) {
+    .warzone-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        gap: 5rem;
+    }
+}
+
+/* popularGamesSection */
+#popularGamesSection .popular-games-grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 1025px) {
+    #popularGamesSection .popular-games-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--blue);
+}
+
+footer ul {
+    margin-top: 4rem;
+    padding: 0;
+}
+
+footer ul li{
+    display: block;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+}
+
+footer ul li a {
+    color: var(--white);
+    opacity: 0.7;
+    text-transform: uppercase;
+}
+footer ul li a:hover{
+    color: var(--white);
+    opacity: 1;
+}
+
+/* Globals */
+
+.mt-4 {
+    margin-top: 4rem;
+}
+.mt-8 {
+    margin-top: 8rem;
+}
+
+.flex {
+    display: flex;
+}
+
+
+
+
+
+
